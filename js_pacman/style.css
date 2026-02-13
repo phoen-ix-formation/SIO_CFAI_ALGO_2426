@@ -17,11 +17,35 @@
 #pacman
 {
     background-image: url('sprites/pacman-left/1.png');
-	background-size: cover;
 
     grid-column-start: 5;
     grid-column-end: 6;
 
     grid-row-start: 2;
     grid-row-end: 3;
+}
+
+#pacman, .ghost
+{
+	background-size: cover;
+}
+
+#ghost-blinky
+{
+    background-image: url('sprites/ghosts/blinky.png');
+}
+
+#ghost-clyde
+{
+    background-image: url('sprites/ghosts/clyde.png');
+}
+
+#ghost-inky
+{
+    background-image: url('sprites/ghosts/inky.png');
+}
+
+#ghost-pinky
+{
+    background-image: url('sprites/ghosts/pinky.png');
 }

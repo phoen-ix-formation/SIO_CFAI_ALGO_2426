@@ -1,0 +1,23 @@
+/* Grille de 28 colonnes par 31 lignes */
+/* Chaque case de 32 px */
+
+#game 
+{
+    margin: auto;
+    
+
+    display: grid; /* Le plateau est en mode grille (grid)
+
+    /* Définition des lignes : chaque ligne est composée de 31 éléments (cases) de 16px */
+    grid-template-rows: repeat(31, 32px); 
+    
+    /* Définition des colonnes : chaque colonne est composée de 28 éléments de 16px */
+    grid-template-columns: repeat(28, 32px);
+
+    gap: 2px;
+}
+
+#game > div
+{
+    background-color: #cecece;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Exercice Javascript</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="styles.css" media="all"/>
+		<script language="javascript">
+			
+			
+
+			function play(choice)
+			{
+				
+			}
+			
+		</script>
+		</head>
+	<body>
+		<header>
+			<h1>Pierre - Feuille - Ciseaux</h1>
+		</header>
+		<div id="main">
+			<div>
+				<h2>Enoncé</h2>
+				<p id="enonce"/>
+					Créer un jeu de Shifumi (Pierre - Feuille - Ciseaux)
+					<ul>
+						<li>Choix utilisateur entre pierre - feuille - ciseaux - lezard - spock</li>
+						<li>Comparaison avec le choix ordinateur (aléatoire)</li>
+					</ul>
+				</p>
+			</div>
+			<div>
+				<h2>Jeu</h2>
+				<p>Faites votre choix :
+					<img class="shifumi-small" id="choix1" src="images/shifumi-pierre.png" onclick="play(this.id)" />
+					<img class="shifumi-small" id="choix2" src="images/shifumi-feuille.png"onclick="play(this.id)" />
+					<img class="shifumi-small" id="choix3" src="images/shifumi-ciseaux.png" onclick="play(this.id)" />
+					<img class="shifumi-small" id="choix4" src="images/shifumi-lezard.png" onclick="play(this.id)" />
+					<img class="shifumi-small" id="choix5" src="images/shifumi-spock.png" onclick="play(this.id)" />
+				</p>
+				<div id='resultat'></div>
+			</div>
+		</div>
+	</body>
+</html>

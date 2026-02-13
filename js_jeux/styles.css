@@ -1,0 +1,87 @@
+	.error {
+	    border: 1px solid red;
+	    padding: 10px;
+	}
+	
+	#logo {
+	    float: left;
+	}
+	
+	h1,
+	nav {
+	    text-align: center;
+	    width: 100%;
+	}
+	
+	#main {
+	    padding-top: 20px;
+	    clear: both;
+	}
+	
+	table,
+	tr,
+	td {
+	    border: medium none;
+	}
+	
+	#left,
+	#content {
+	    float: left;
+	    width: 45%;
+	}
+	
+	#main {
+	    width: 50%;
+	    margin: auto;
+	}
+	
+	#result {
+	    clear: both;
+	    margin: auto;
+	}
+	
+	#result form {
+	    float: left;
+	    width: 50%;
+	}
+	/* SHIFUMI */
+	
+	.shifumi-small {
+	    height: 100px;
+	}
+	/* IMC */
+	
+	.maigre,
+	.normal,
+	.surpoids,
+	.obese,
+	.morbide {
+	    border: 1px solid black;
+	    padding: 10px;
+	    margin: 10px;
+	}
+	
+	.maigre {
+	    background-color: #9cceff;
+	}
+	
+	.normal {
+	    background-color: #019bd1;
+	}
+	
+	.surpoids {
+	    background-color: #ff9c00;
+	}
+	
+	.obese {
+	    background-color: #ff6630;
+	}
+	
+	.morbide {
+	    background-color: #cd0132;
+	}
+	/* Pointure */
+	
+	#pointure #main img {
+	    width: 70%;
+	}

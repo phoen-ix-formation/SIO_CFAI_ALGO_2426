@@ -1,9 +1,179 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<title>Exercice Javascript</title>
+		<title>Exercice Javascript</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" href="styles.css" media="all"/>
+		
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+			rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+		
+	</head>
+	<body>
+		<header>
+			<h1>Yams</h1>
+		</header>
+		<div class="container">
+			<div class="row">
+				<div class="col-6">
+					<div class="card">
+						<div class="card-header">
+							<h2>Enoncé</h2>
+						</div>
+
+						<div class="card-body">
+							<p id="enonce">
+							Créer un jeu de Yams
+								<ul>
+									<li>Trois tirages de dés</li>
+									<li>Possibilité de sélectionner certains dés</li>
+									<li>Choix du résultat</li>
+									<li>Une fois le choix effectué, on ne peut plus l'affecter</li>
+									<li>Si on clique sur un mauvais choix, on met 0</li>
+									<li>Calcul du résultat total</li>
+								</ul>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-6">
+					<div class="card">
+						<div class="card-header">
+							<h2>Tirage</h2>
+						</div>
+
+						<div class="card-body">
+							<div class="row text-center mt-3">
+								<div class="col">
+									<img src="images/dice1.png" name="dice1" id="dice1" width="50" height="50">
+									<input type="checkbox" name="dice1-check" id="dice1-check">
+								</div>
+								<div class="col">
+									<img src="images/dice1.png" name="dice2" id="dice2" width="50" height="50">
+									<input type="checkbox" name="dice2-check" id="dice2-check">
+								</div>
+								<div class="col">
+									<img src="images/dice1.png" name="dice3" id="dice3" width="50" height="50">
+									<input type="checkbox" name="dice3-check" id="dice3-check">
+								</div>
+								<div class="col">
+									<img src="images/dice1.png" name="dice4" id="dice4" width="50" height="50">
+									<input type="checkbox" name="dice4-check" id="dice4-check">
+								</div>
+								<div class="col">
+									<img src="images/dice1.png" name="dice5" id="dice5" width="50" height="50">
+									<input type="checkbox" name="dice5-check" id="dice5-check">
+								</div>
+							</div>
+							
+							<button class="btn btn-primary mt-3" onclick="diceRoll()">Lancer les dés</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-3">
+				<h2>Résultats</h2>
+				
+				<div class="col-6">
+
+					<form name="results_haut">
+						<table>
+							<tr>
+									<td><b>1</b></td>
+									<td><input type="text" name="uns" id="aff1" value=" " size="10" READONLY></td>
+									<td><input type="button" value="- Valider -" name="unb" id="btnaff1" title="Valider"></td>
+							</tr>
+							<tr>
+									<td><b>2</b></td>
+									<td><input type="text" name="deux" id="aff2" value=" " size="10" READONLY></td>
+									<td><input type="button" value="- Valider -" name="deuxb" id="btnaff2" title="Valider"></td>
+							</tr>
+							<tr>
+									<td><b>3</b></td>
+									<td><input type="text" name="trois" id="aff3" value=" " size="10" READONLY></td>
+									<td><input type="button" value="- Valider -" name="troisb" id="btnaff3" title="Valider"></td>
+							</tr>
+							<tr>
+									<td><b>4</b></td>
+									<td><input type="text" name="quatre" id="aff4" value=" " size="10" READONLY></td>
+									<td><input type="button" value="- Valider -" name="quatreb" id="btnaff4" title="Valider"></td>
+							</tr>
+							<tr>
+									<td><b>5</b></td>
+									<td><input type="text" name="cinq" id="aff5" value=" " size="10" READONLY></td>
+									<td><input type="button" value="- Valider -" name="cinqb" id="btnaff5" title="Valider"></td>
+							</tr>
+							<tr>
+									<td><b>6</b></td>
+									<td><input type="text" name="six" id="aff6" value=" " size="10" READONLY></td>
+									<td><input type="button" value="- Valider -" name="sixb" id="btnaff6" title="Valider"></td>
+							</tr>
+							<tr>
+									<td><b>Bonus</b></td>
+									<td><input type="text" id="bonus" name="bonus" value=" " size="10" READONLY></td>
+
+							</tr>
+							<tr>
+									<td><b>Total</b></td>
+									<td><input type="text" id="tot" name="tot" value=" " size="10" READONLY ></td>
+
+							</tr>
+						</table>
+					</form>
+				</div>
+				<div class="col-6">
+					<form name="results_bas">
+						<table>
+							<tr>
+									<td><b>Plus</b></td>
+									<td><input type="text" name="plus" id="affplus" value=" " size="10" READONLY></td>
+									<td><input type="button" value="- Valider -" id="btnaffplus" name="plusb" title="Valider" ></td>
+							</tr>
+							<tr>
+									<td><b>Moins</b></td>
+									<td><input type="text" name="moins" id="affmoins" value=" " size="10" READONLY></td>
+									<td><input type="button" value="- Valider -" id="btnaffmoins" name="moinsb" title="Valider" ></td>
+							</tr>
+							<tr>
+									<td><b>Brelan</b></td>
+									<td><input type="text" name="brelan" id="affbrelan"  value=" " size="10" READONLY></td>
+									<td><input type="button" value="- Valider -" id="btnaffbrelan" name="brelanb" title="Valider"></td>
+							</tr>
+							<tr>
+									<td><b>Suite</b></td>
+									<td><input type="text" name="suite" id="affsuite" value=" " size="10" READONLY></td>
+									<td><input type="button" value="- Valider -" id="btnaffsuite" name="suiteb" title="Valider"></td>
+							</tr>
+							<tr>
+									<td><b>Full</b></td>
+									<td><input type="text" name="full" id="afffull" value=" " size="10" READONLY></td>
+									<td><input type="button" value="- Valider -" id="btnafffull" name="fullb" title="Valider"></td>
+							</tr>
+							<tr>
+									<td><b>Carré</b></td>
+									<td><input type="text" name="carre" id="affcarre" value=" " size="10" READONLY></td>
+									<td><input type="button" value="- Valider -" id="btnaffcarre" name="carreb" title="Valider"></td>
+							</tr>
+							<tr>
+									<td><b>Yam's</b></td>
+									<td><input type="text" name="yam" id="affyams" value=" " size="10" READONLY></td>
+									<td><input type="button" value="- Valider -" id="btnaffyams" name="yamsb" title="Valider"></td>
+							</tr>
+							<tr>
+									<td><b>Total</b></td>
+									<td><input type="text" id="totbis" name="totbis" value=" " size="10" READONLY></td>
+
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+			integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
 		<script language="javascript">
 
 			// Fonction permettant de générer un nombre aléatoire entre min et max (inclus)
@@ -13,6 +183,19 @@
 				max = Math.floor(max);
 				return Math.floor(Math.random() * (max - min + 1)) + min;
 			}
+
+			// On sort le tableau des valeurs à l'extérieur de la fonction qui gère le lancer le dés
+			// Pour pouvoir réutiliser les valeurs d'un lancé à un autre
+			// 3 lancers possibles à chaque fois
+			let arrDiceValues;
+			initDices();
+
+			// Fonction qui initialise le tableau des dés
+			function initDices()
+			{
+				// Les valeurs par défaut à 0
+				arrDiceValues = [0, 0, 0, 0, 0];
+			}
 			
 			function diceRoll()
 			{
@@ -21,16 +204,25 @@
 				event.preventDefault();
 
 				// Initialisation d'un tableau vide pour stocker les valeurs
-				let arrDiceValues = [];
 
 				// On génère 5 valeurs pour nos 5 dés
 				for(let i = 0; i < 5; i++) {
 
-					// On génère 1 une valeur pour le dé #i
-					const intDiceValue = getRandomIntInclusive(1, 6);
+					// On récupère l'input HTML (checkbox) qui correspond au dé #i
+					const elCheckbox = document.getElementById('dice' + (i + 1) + '-check');
 
-					// On pousse cette valeur dans le tableu des valeurs des 5 dés
-					arrDiceValues.push(intDiceValue);
+					// On vérifie si la checkbox est cochée ou non, et on ne modifie la valeur que si 
+					// la case n'est pas cochée
+					if(!elCheckbox.checked) 
+					{
+						// On génère 1 une valeur pour le dé #i
+						const intDiceValue = getRandomIntInclusive(1, 6);
+
+						// On pousse cette valeur dans le tableu des valeurs des 5 dés
+						// arrDiceValues.push(intDiceValue);
+
+						arrDiceValues[i] = intDiceValue;
+					}
 				}
 
 				// On appelle la fonction qui affiche les valeurs des dés
@@ -58,140 +250,5 @@
 			}
 
 		</script>
-		</head>
-	<body>
-		<header>
-			<h1>Yams</h1>
-		</header>
-		<div id="main">
-			<div id="left">
-				<h2>Enoncé</h2>
-				<p id="enonce"/>
-					Créer un jeu de Yams
-					<ul>
-						<li>Trois tirages de dés</li>
-						<li>Possibilité de sélectionner certains dés</li>
-						<li>Choix du résultat</li>
-						<li>Une fois le choix effectué, on ne peut plus l'affecter</li>
-						<li>Si on clique sur un mauvais choix, on met 0</li>
-						<li>Calcul du résultat total</li>
-					</ul>
-				</p>
-			</div>
-			<div id="content">
-				<h2>Tirage</h2>
-				<form name="yams">
-					<table border="3" bordercolor="red">
-						<tr>
-							<td align="center"><img src="images/dice1.png" name="photo1" id="dice1" width="50" height="50"></td>
-							<td align="center"><img src="images/dice1.png" name="photo2" id="dice2" width="50" height="50"></td>
-							<td align="center"><img src="images/dice1.png" name="photo3" id="dice3" width="50" height="50"></td>
-							<td align="center"><img src="images/dice1.png" name="photo4" id="dice4" width="50" height="50"></td>
-							<td align="center"><img src="images/dice1.png" name="photo5" id="dice5" width="50" height="50"></td>
-						</tr>
-						<tr>
-							<td align="center"><input type="checkbox" name="chk1" id="chk1"></td>
-							<td align="center"><input type="checkbox" name="chk2" id="chk2"></td>
-							<td align="center"><input type="checkbox" name="chk3" id="chk3"></td>
-							<td align="center"><input type="checkbox" name="chk4" id="chk4"></td>
-							<td align="center"><input type="checkbox" name="chk5" id="chk5"></td>
-						</tr>
-					</table>
-
-					<button onclick="diceRoll()">Lancer les dés</button>
-				</form>
-			</div>
-			<div id="result">
-				<h2>Résultat</h2>
-				<form name="results_haut">
-					<table>
-						<tr>
-								<td align="center"><b>1</b></td>
-								<td align="center"><input type="text" name="uns" id="aff1" value=" " size="10" READONLY></td>
-								<td align="center"><input type="button" value="- Valider -" name="unb" id="btnaff1" title="Valider"></td>
-						</tr>
-						<tr>
-								<td align="center"><b>2</b></td>
-								<td align="center"><input type="text" name="deux" id="aff2" value=" " size="10" READONLY></td>
-								<td align="center"><input type="button" value="- Valider -" name="deuxb" id="btnaff2" title="Valider"></td>
-						</tr>
-						<tr>
-								<td align="center"><b>3</b></td>
-								<td align="center"><input type="text" name="trois" id="aff3" value=" " size="10" READONLY></td>
-								<td align="center"><input type="button" value="- Valider -" name="troisb" id="btnaff3" title="Valider"></td>
-						</tr>
-						<tr>
-								<td align="center"><b>4</b></td>
-								<td align="center"><input type="text" name="quatre" id="aff4" value=" " size="10" READONLY></td>
-								<td align="center"><input type="button" value="- Valider -" name="quatreb" id="btnaff4" title="Valider"></td>
-						</tr>
-						<tr>
-								<td align="center"><b>5</b></td>
-								<td align="center"><input type="text" name="cinq" id="aff5" value=" " size="10" READONLY></td>
-								<td align="center"><input type="button" value="- Valider -" name="cinqb" id="btnaff5" title="Valider"></td>
-						</tr>
-						<tr>
-								<td align="center"><b>6</b></td>
-								<td align="center"><input type="text" name="six" id="aff6" value=" " size="10" READONLY></td>
-								<td align="center"><input type="button" value="- Valider -" name="sixb" id="btnaff6" title="Valider"></td>
-						</tr>
-						<tr>
-								<td align="center"><b>Bonus</b></td>
-								<td align="center"><input type="text" id="bonus" name="bonus" value=" " size="10" READONLY></td>
-
-						</tr>
-						<tr>
-								<td align="center"><b>Total</b></td>
-								<td align="center"><input type="text" id="tot" name="tot" value=" " size="10" READONLY ></td>
-
-						</tr>
-					</table>
-				</form>
-				<form name="results_bas">
-					<table>
-						<tr>
-								<td align="center"><b>Plus</b></td>
-								<td align="center"><input type="text" name="plus" id="affplus" value=" " size="10" READONLY></td>
-								<td align="center"><input type="button" value="- Valider -" id="btnaffplus" name="plusb" title="Valider" ></td>
-						</tr>
-						<tr>
-								<td align="center"><b>Moins</b></td>
-								<td align="center"><input type="text" name="moins" id="affmoins" value=" " size="10" READONLY></td>
-								<td align="center"><input type="button" value="- Valider -" id="btnaffmoins" name="moinsb" title="Valider" ></td>
-						</tr>
-						<tr>
-								<td align="center"><b>Brelan</b></td>
-								<td align="center"><input type="text" name="brelan" id="affbrelan"  value=" " size="10" READONLY></td>
-								<td align="center"><input type="button" value="- Valider -" id="btnaffbrelan" name="brelanb" title="Valider"></td>
-						</tr>
-						<tr>
-								<td align="center"><b>Suite</b></td>
-								<td align="center"><input type="text" name="suite" id="affsuite" value=" " size="10" READONLY></td>
-								<td align="center"><input type="button" value="- Valider -" id="btnaffsuite" name="suiteb" title="Valider"></td>
-						</tr>
-						<tr>
-								<td align="center"><b>Full</b></td>
-								<td align="center"><input type="text" name="full" id="afffull" value=" " size="10" READONLY></td>
-								<td align="center"><input type="button" value="- Valider -" id="btnafffull" name="fullb" title="Valider"></td>
-						</tr>
-						<tr>
-								<td align="center"><b>Carré</b></td>
-								<td align="center"><input type="text" name="carre" id="affcarre" value=" " size="10" READONLY></td>
-								<td align="center"><input type="button" value="- Valider -" id="btnaffcarre" name="carreb" title="Valider"></td>
-						</tr>
-						<tr>
-								<td align="center"><b>Yam's</b></td>
-								<td align="center"><input type="text" name="yam" id="affyams" value=" " size="10" READONLY></td>
-								<td align="center"><input type="button" value="- Valider -" id="btnaffyams" name="yamsb" title="Valider"></td>
-						</tr>
-						<tr>
-								<td align="center"><b>Total</b></td>
-								<td align="center"><input type="text" id="totbis" name="totbis" value=" " size="10" READONLY></td>
-
-						</tr>
-					</table>
-				</form>
-			</div>
-		</div>
 	</body>
 </html>

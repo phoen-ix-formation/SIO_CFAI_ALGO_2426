@@ -2,22 +2,26 @@
 /* Chaque case de 32 px */
 
 #game 
-{
-    margin: auto;
-    
-
+{ 
     display: grid; /* Le plateau est en mode grille (grid)
 
     /* Définition des lignes : chaque ligne est composée de 31 éléments (cases) de 16px */
-    grid-template-rows: repeat(31, 32px); 
+    grid-template-rows: repeat(31, 16px); 
     
     /* Définition des colonnes : chaque colonne est composée de 28 éléments de 16px */
-    grid-template-columns: repeat(28, 32px);
+    grid-template-columns: repeat(28, 16px);
 
-    gap: 2px;
+    background-color: #000;
 }
 
-#game > div
+#pacman
 {
-    background-color: #cecece;
+    background-image: url('sprites/pacman-left/1.png');
+	background-size: cover;
+
+    grid-column-start: 5;
+    grid-column-end: 6;
+
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
